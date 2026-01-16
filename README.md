@@ -1,8 +1,9 @@
 # Hi there, I'm Sam Obila Allela 👋
 
 <div align="center">
- 
+  <img src="./assets/banner.svg" alt="Data Scientist & Machine Learning Engineer" width="100%"/>
 </div>
+
 
 ## 🚀 About Me
 
