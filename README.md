@@ -1,4 +1,4 @@
-# Hi there, I'm Sam OObila Allela 👋
+# Hi there, I'm Sam Obila Allela 👋
 
 <div align="center">
   <img src="YOUR_BANNER_IMAGE_URL" alt="Banner" width="100%"/>
@@ -12,7 +12,7 @@ I'm a **Data Scientist** passionate about turning data into actionable insights 
 - 🌱 I'm learning **Keras and OpenCV**  
 - 👯 I'm looking to collaborate on **Machine Learning & AI Projects**  
 - 💬 Ask me about **Data Science, Machine Learning, Python, and Analytics**  
-- 📫 How to reach me: **your.email@example.com**  
+- 📫 How to reach me: **Obilasam3@gmail.com**  
 - ⚡ Fun fact: **💻 Building logic, framing shots.**
 
 ## 🛠️ Tech Stack
@@ -74,12 +74,16 @@ I'm a **Data Scientist** passionate about turning data into actionable insights 
 ## 🤝 Connect with Me
 
 <div align="center">
-  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sam-allela?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_bas[...]
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sam-allela?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bd1RWDzziRvuYFe22B1FqPQ%3D%3D)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@yourprofile)
 
 </div>
+
+
+
+
 
 
 ---
