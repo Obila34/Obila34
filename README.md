@@ -6,7 +6,7 @@
 
 ## 🚀 About Me
 
-I'm a **Data Scientist** passionate about turning data into actionable insights and building machine learning solutions that make a real-world impact. With expertise in statistical modeling, deep lear[...]  
+I'm a **Data Scientist** passionate about turning data into actionable insights and building machine learning solutions that make a real-world impact. With expertise in statistical modeling, deep learning, and data visualization, I love solving complex problems through data-driven approaches.  
 
 - 🔭 I'm currently working on **Building A ChatBot For Customer Support**  
 - 🌱 I'm learning **Keras and OpenCV**  
@@ -81,17 +81,12 @@ I'm a **Data Scientist** passionate about turning data into actionable insights 
 
 </div>
 
-
-
-
-
-
 ---
 
 <div align="center">
   
 💡 *"Data is the new oil, but insights are the refined fuel that powers innovation"*
 
-⭐️ From [YourUsername](https://github.com/Obila34)
+⭐️ From [Obila34](https://github.com/Obila34)
 
 </div>
