@@ -1,6 +1,10 @@
 # Hi there, I'm Sam Obila Allela 👋
 
 <div align="center">
+  <img src="https://img.shields.io/badge/AI_Engineer-000000?style=for-the-badge&logo=openai&logoColor=white" alt="AI Engineer"/>
+</div>
+
+<div align="center">
   <img src="./assets/banner.svg" alt="Data Scientist & Machine Learning Engineer" width="100%"/>
 </div>
 
@@ -35,7 +39,6 @@ I'm a **Data Scientist** passionate about turning data into actionable insights 
 ### Tools & Platforms  
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)     ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)       ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)  
-
 
 
 ## 🏆 Featured Projects
