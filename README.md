@@ -101,36 +101,36 @@
 
 <table border="0" cellspacing="15" cellpadding="0" width="100%">
   <tr>
-    <td width="30%" valign="top">
+    <td width="40%" valign="top">
       <a href="https://medium.com/@obilasam3/the-universal-port-for-ai-a-deep-dive-into-mcp-architecture-f7050f1b8c39">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="MCP Architecture Cover"/>
+        <img src="YOUR_MCP_IMAGE_URL" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="Model Context Protocol (MCP) Cover"/>
       </a>
     </td>
-    <td width="70%" valign="top" style="padding-left: 15px;">
+    <td width="60%" valign="top" style="padding-left: 15px;">
       <b>:: <a href="https://medium.com/@obilasam3/the-universal-port-for-ai-a-deep-dive-into-mcp-architecture-f7050f1b8c39">The Universal Port for AI: A Deep Dive into MCP Architecture</a></b><br/>
       <p style="margin: 5px 0; font-size: 13px; color: #888;">An architectural investigation into the Model Context Protocol (MCP), establishing standardized data ports to seamlessly connect LLMs with external tools, applications, and memory environments.</p>
     </td>
   </tr>
   <tr style="height: 20px;"></tr>
   <tr>
-    <td width="30%" valign="top">
+    <td width="40%" valign="top">
       <a href="https://medium.com/@obilasam3/how-do-you-know-your-ai-is-actually-good-a-guide-to-llm-evaluation-0c6bb4d63df5">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="LLM Evaluation Cover"/>
+        <img src="YOUR_LLM_EVAL_IMAGE_URL" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="How Do You Know Your AI Is Good Cover"/>
       </a>
     </td>
-    <td width="70%" valign="top" style="padding-left: 15px;">
+    <td width="60%" valign="top" style="padding-left: 15px;">
       <b>:: <a href="https://medium.com/@obilasam3/how-do-you-know-your-ai-is-actually-good-a-guide-to-llm-evaluation-0c6bb4d63df5">How Do You Know Your AI is Actually Good? A Guide to LLM Evaluation</a></b><br/>
       <p style="margin: 5px 0; font-size: 13px; color: #888;">Breaking down rigorous testing frameworks, metric formulations, and automated benchmarking techniques required to validate LLM performance and alignment in production environments.</p>
     </td>
   </tr>
   <tr style="height: 20px;"></tr>
   <tr>
-    <td width="30%" valign="top">
+    <td width="40%" valign="top">
       <a href="https://medium.com/@obilasam3/teaching-ai-to-remember-a-deep-dive-into-retrieval-augmented-generation-9a43d0c9c615">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="RAG Cover"/>
       </a>
     </td>
-    <td width="70%" valign="top" style="padding-left: 15px;">
+    <td width="60%" valign="top" style="padding-left: 15px;">
       <b>:: <a href="https://medium.com/@obilasam3/teaching-ai-to-remember-a-deep-dive-into-retrieval-augmented-generation-9a43d0c9c615">Teaching AI to Remember: A Deep Dive into Retrieval-Augmented Generation</a></b><br/>
       <p style="margin: 5px 0; font-size: 13px; color: #888;">Exploring the high-velocity mechanics of RAG systems, analyzing how dynamic index retrieval bridges foundational model knowledge with external, real-time database contexts.</p>
     </td>
@@ -161,8 +161,4 @@
 * **Python Data Associate** — DataCamp (2023)
 
 ---
----
 
-### // Neural Topology: Core Engine
-
-Architecting multi-agent systems and fluid vector fields that route complex contexts into autonomous, deterministic execution streams.
