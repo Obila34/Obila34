@@ -103,7 +103,7 @@
   <tr>
     <td width="40%" valign="top">
       <a href="https://medium.com/@obilasam3/the-universal-port-for-ai-a-deep-dive-into-mcp-architecture-f7050f1b8c39">
-        <img src="Assets/Screenshot 2026-05-19 115039.png"" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="Model Context Protocol (MCP) Cover"/>
+        <img width="850" height="489" alt="Image" src="https://github.com/user-attachments/assets/7f7e492b-39e4-4a11-92ec-65d1d16f407d" />
       </a>
     </td>
     <td width="60%" valign="top" style="padding-left: 15px;">
@@ -115,7 +115,7 @@
   <tr>
     <td width="40%" valign="top">
       <a href="https://medium.com/@obilasam3/how-do-you-know-your-ai-is-actually-good-a-guide-to-llm-evaluation-0c6bb4d63df5">
-        <img src="Assets/Screenshot 2026-05-19 115106.png"" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="How Do You Know Your AI Is Good Cover"/>
+      <img width="847" height="428" alt="Image" src="https://github.com/user-attachments/assets/cd7f9f9c-dcda-41ea-b353-96bf98cb8c96" />
       </a>
     </td>
     <td width="60%" valign="top" style="padding-left: 15px;">
