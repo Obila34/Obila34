@@ -26,6 +26,141 @@
 
 </div>
 
+[User Intent] ──▸ [Agentic Coordinator] ──▸ [Tool Orchestration] ──▸ [Memory Stream]
+│
+[Optimized Execution] <───────(Reasoning Loop)──────────────────────────────┘
+
+* **▸ Agentic Architectures**: Developing stateful, autonomous AI agents utilizing reasoning patterns (ReAct), multi-agent orchestration, and specialized execution tools.
+* **▸ LLM Infrastructure**: Engineering high-velocity **RAG (Retrieval-Augmented Generation)** loops using **LangChain** and **OpenAI** to feed precise data streams back into active contexts.
+* **▸ High-Speed Vector Fields**: Scaling similarity search nodes via **Pinecone** and **ChromaDB** to achieve sub-second document convergence.
+* **▸ MLOps Integration**: Building automated execution pipelines that continuously ingest, validate, and deploy production-grade intelligence.
+
+---
+
+### // Ecosystem Matrix
+
+<div align="center">
+
+<p align="left"><b>:: Core Languages & Runtimes</b></p>
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=py,ts,js,sublime,postgres&theme=dark" />
+</p>
+
+<p align="left"><b>:: Frameworks & Neural Vectors</b></p>
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,scikit,docker,gcp,git&theme=dark" />
+</p>
+
+</div>
+
+---
+
+### // Active Nodes (Featured Deployments)
+
+<div align="center">
+
+<table border="0" cellspacing="10" cellpadding="10" width="100%">
+  <tr>
+    <td width="50%" align="center" style="background: #0d1117; border-radius: 6px; border: 1px solid #1f2937;">
+      <a href="https://github.com/Obila34/SolAgent">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Obila34&repo=SolAgent&theme=dark&bg_color=000000&title_color=3B82F6&text_color=FFFFFF&icon_color=3B82F6&hide_border=true" width="100%" alt="SolAgent" />
+      </a>
+      <br />
+      <b>SolAgent</b>
+      <p><small>Autonomous AI agent designed to manage Solana crypto wallets using natural language processing.</small></p>
+    </td>
+    <td width="50%" align="center" style="background: #0d1117; border-radius: 6px; border: 1px solid #1f2937;">
+      <a href="https://github.com/Obila34/MeshFix">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Obila34&repo=MeshFix&theme=dark&bg_color=000000&title_color=3B82F6&text_color=FFFFFF&icon_color=3B82F6&hide_border=true" width="100%" alt="MeshFix" />
+      </a>
+      <br />
+      <b>MeshFix</b>
+      <p><small>Intelligent automated tool optimization pipeline for data restructuring and geometric normalization.</small></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" style="background: #0d1117; border-radius: 6px; border: 1px solid #1f2937;">
+      <a href="https://github.com/Obila34/pyforge-labs/tree/main/studybot">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Obila34&repo=pyforge-labs&theme=dark&bg_color=000000&title_color=3B82F6&text_color=FFFFFF&icon_color=3B82F6&hide_border=true" width="100%" alt="Study Bot" />
+      </a>
+      <br />
+      <b>Study Bot</b>
+      <p><small>Intelligent assistant built with Google SDK for AI-driven insights.</small></p>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=Obila34&bg_color=000000&color=3B82F6&line=3B82F6&point=FFFFFF&area=true&hide_border=true" width="100%" alt="Activity Flow" />
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+### // Technical Publications (Medium)
+
+<table border="0" cellspacing="15" cellpadding="0" width="100%">
+  <tr>
+    <td width="30%" valign="top">
+      <a href="https://medium.com/@obilasam3/the-universal-port-for-ai-a-deep-dive-into-mcp-architecture-f7050f1b8c39">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="MCP Architecture Cover"/>
+      </a>
+    </td>
+    <td width="70%" valign="top" style="padding-left: 15px;">
+      <b>:: <a href="https://medium.com/@obilasam3/the-universal-port-for-ai-a-deep-dive-into-mcp-architecture-f7050f1b8c39">The Universal Port for AI: A Deep Dive into MCP Architecture</a></b><br/>
+      <p style="margin: 5px 0; font-size: 13px; color: #888;">An architectural investigation into the Model Context Protocol (MCP), establishing standardized data ports to seamlessly connect LLMs with external tools, applications, and memory environments.</p>
+    </td>
+  </tr>
+  <tr style="height: 20px;"></tr>
+  <tr>
+    <td width="30%" valign="top">
+      <a href="https://medium.com/@obilasam3/how-do-you-know-your-ai-is-actually-good-a-guide-to-llm-evaluation-0c6bb4d63df5">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="LLM Evaluation Cover"/>
+      </a>
+    </td>
+    <td width="70%" valign="top" style="padding-left: 15px;">
+      <b>:: <a href="https://medium.com/@obilasam3/how-do-you-know-your-ai-is-actually-good-a-guide-to-llm-evaluation-0c6bb4d63df5">How Do You Know Your AI is Actually Good? A Guide to LLM Evaluation</a></b><br/>
+      <p style="margin: 5px 0; font-size: 13px; color: #888;">Breaking down rigorous testing frameworks, metric formulations, and automated benchmarking techniques required to validate LLM performance and alignment in production environments.</p>
+    </td>
+  </tr>
+  <tr style="height: 20px;"></tr>
+  <tr>
+    <td width="30%" valign="top">
+      <a href="https://medium.com/@obilasam3/teaching-ai-to-remember-a-deep-dive-into-retrieval-augmented-generation-9a43d0c9c615">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" width="100%" style="border-radius: 6px; border: 1px solid #1f2937;" alt="RAG Cover"/>
+      </a>
+    </td>
+    <td width="70%" valign="top" style="padding-left: 15px;">
+      <b>:: <a href="https://medium.com/@obilasam3/teaching-ai-to-remember-a-deep-dive-into-retrieval-augmented-generation-9a43d0c9c615">Teaching AI to Remember: A Deep Dive into Retrieval-Augmented Generation</a></b><br/>
+      <p style="margin: 5px 0; font-size: 13px; color: #888;">Exploring the high-velocity mechanics of RAG systems, analyzing how dynamic index retrieval bridges foundational model knowledge with external, real-time database contexts.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+### // Telemetry & Activity Streams
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=Obila34&show_icons=true&theme=dark&bg_color=000000&title_color=3B82F6&text_color=FFFFFF&icon_color=3B82F6&hide_border=true&count_private=true" width="49%" alt="GitHub Stats" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Obila34&theme=dark&background=000000&hide_border=true&stroke=3B82F6&ring=3B82F6&fire=3B82F6&currStreakLabel=3B82F6" width="49%" alt="GitHub Streak" />
+
+<br/><br/>
+
+<img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Contribution Grid Stream" width="100%" />
+
+</div>
+
+---
+
+### // Verified Network Protocols
+
+* **AWS AI Practitioner Challenge** — Udacity (2026)
+* **AI Engineer for Data Scientists Associate** — DataCamp (2024)
+* **Python Data Associate** — DataCamp (2023)
+
+---
 ---
 
 ### // Neural Topology: Core Engine
