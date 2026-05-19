@@ -1,12 +1,21 @@
 <div align="center">
 
-<!-- HEADER: Particle Stream Wave -->
-<img src="https://capsule-render.vercel.app/render?type=waving&color=000000&secondaryColor=3B82F6&height=250&section=header&text=SAM%20ALLELA&fontSize=75&animation=twinkling&fontAlignY=40&desc=%E2%9C%A7%20Quantum%20Data%20Streams%20%26%20Neural%20Architectures%20%E2%9C%A7&descAlignY=65&descSize=18&fontColor=3B82F6" width="100%" alt="Sam Allela Kinetic Header" />
+<svg viewBox="0 0 900 220" width="100%" style="background:#000000; font-family:'JetBrains Mono', monospace; border-radius:6px;">
+  <circle cx="100" cy="60" r="1" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="800" cy="160" r="1.5" fill="#3B82F6" opacity="0.5"/>
+  <circle cx="450" cy="180" r="1" fill="#FFFFFF" opacity="0.2"/>
+  <circle cx="250" cy="140" r="2" fill="#3B82F6" opacity="0.4"/>
+  
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-size="64" font-weight="800" fill="#3B82F6" letter-spacing="4">SAM ALLELA</text>
+  
+  <text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="14" fill="#FFFFFF" letter-spacing="6" opacity="0.8">QUANTUM DATA STREAMS // NEURAL ARCHITECTURES</text>
+  
+  <line x1="200" y1="190" x2="700" y2="190" stroke="#3B82F6" stroke-width="1" stroke-dasharray="5,5" opacity="0.6"/>
+</svg>
 
 <br/>
 
-<!-- Dynamic Particle Typing Effect -->
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=24&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=%E2%96%B3+Mapping+High-Dimensional+Vector+Spaces;%E2%A4%B1+Architecting+Fluid+RAG+Pipelines;%E2%AC%A1+GenAI+%2F+NLP+Production+Systems;%E2%A4%A0+Synthesizing+Data+into+Intelligence)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=Mapping+High-Dimensional+Vector+Spaces;Architecting+Fluid+RAG+Pipelines;GenAI+%2F+NLP+Production+Systems;Synthesizing+Data+into+Intelligence)](https://git.io/typing-svg)
 
 <p align="center">
   <a href="https://sam-obila-allela.vercel.app/"><img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=google-chrome&logoColor=3B82F6" /></a>
@@ -18,6 +27,7 @@
 
 ---
 
-### <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0NnY1c3A4dmszd3I2NWhzbW96cnM0dWpndm9tcms1bWR6Ym90NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L3X9GvHcCgq0CEKD66/giphy.gif" width="30"/> Neural Topology: Core Engine
+### // Neural Topology: Core Engine
 
-I design and fine-tune fluid models that flow seamlessly between vast knowledge bases and lightning-fast inference points.
+Architecting fluid systems that route context between multi-dimensional vector spaces and active inference nodes.
+
