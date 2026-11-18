@@ -32,7 +32,7 @@ jobs:
 
       - name: Render cards
         run: |
-          pip install --quiet fonttools brotli
+          pip install --quiet fonttools brotli pillow
           python scripts/build_cards.py
 
       - name: Commit cards

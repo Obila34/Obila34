@@ -8,7 +8,7 @@ Both modes also write a local preview page (preview/index.html or
 preview/static.html) that lays the cards out exactly like README.md.
 
 Input:  data/github.json, refreshed daily by .github/workflows/cards.yml
-Needs:  pip install fonttools brotli
+Needs:  pip install fonttools brotli pillow
 """
 from __future__ import annotations
 
@@ -37,8 +37,8 @@ OUT = ROOT / ("preview/static" if STATIC else "cards")
 NAME = "Sam Obila Allela"
 GREETING = "Hi, I am"
 LOGO = "[S.A]"
-LINE = "Data scientist and AI engineer from Nairobi, Kenya, who learns by building things."
-PORTRAIT = ROOT / "data/portrait.jpg"  # optional: delete the file to drop it
+LINE = "Robotics and machine learning engineer in Nairobi, building speech AI and agentic systems for the physical world."
+PORTRAIT = ROOT / "data/portrait.png"  # optional cut-out, drawn in 1s and 0s; delete the file to drop it
 
 TILES = [  # one tile per entry, file name cards/tile-<slug>.svg
     dict(slug="portfolio", kicker="Website", title="Portfolio", detail="sam-obila-allela.vercel.app"),
@@ -46,13 +46,25 @@ TILES = [  # one tile per entry, file name cards/tile-<slug>.svg
     dict(slug="medium", kicker="Writing", title="Medium", detail="@obilasam3"),
 ]
 
-FEATURED = [  # one card per entry, file name cards/repo-<slug>.svg
-    dict(slug="solagent", repo="SolAgent", title="SolAgent",
-         blurb="Autonomous AI agent designed to manage Solana crypto wallets using natural language processing."),
-    dict(slug="meshfix", repo="MeshFix", title="MeshFix",
-         blurb="Intelligent automated tool optimization pipeline for data restructuring and geometric normalization."),
-    dict(slug="studybot", repo="pyforge-labs", path="studybot", title="Study Bot",
-         blurb="Intelligent assistant built with Google SDK for AI-driven insights."),
+FEATURED = [  # one card per entry, file name cards/repo-<slug>.svg; links live in README.md
+    dict(slug="credit", kicker="Research · SSRN · Jul 2026", title="Alternative Credit Infrastructure", tag="Paper",
+         blurb="A 29-page review, co-authored with Israel Gilbert, of credit systems for the informal economy "
+               "in Kenya, Uganda and Ghana, covering privacy and responsible financial AI."),
+    dict(slug="zero", kicker="Robotics · Speech AI", title="ZERO", tag="Python",
+         blurb="Offline conversational voice robot for the Raspberry Pi 5: wake word, speech-to-text, "
+               "a local LLM and text-to-speech, all running on the device."),
+    dict(slug="ali", kicker="Speech AI · Swahili TTS", title="ALI", tag="Python",
+         blurb="Self-training Kenyan-Swahili voice: gathers rights-cleared speech, trains LoRA adapters offline "
+               "and promotes only candidates that pass an automated evaluation gate."),
+    dict(slug="mantis", kicker="Agent observability", title="MANTIS", tag="Python",
+         blurb="Cost-aware observability for AI agents: structured traces, budget guards that stop a run "
+               "before the next LLM call, causal graphs and a Next.js dashboard."),
+    dict(slug="sentinelai", kicker="Agentic security", title="SentinelAI", tag="TypeScript",
+         blurb="Autonomous SOC analyst that detects, investigates and reports on Elasticsearch security logs "
+               "over MCP, with human approval for high-impact actions."),
+    dict(slug="solagent", kicker="Mobile agent", title="SolAgent", tag="TypeScript",
+         blurb="Mobile AI agent for Solana: say what you want in plain English, see exactly what will happen, "
+               "and approve before anything moves."),
 ]
 
 # Colours and fonts, taken from sam-obila-allela.vercel.app
@@ -72,7 +84,7 @@ FACES = {  # key: (family, weight, file in fonts/)
 }
 
 # Seconds before each card starts, so the page plays top to bottom.
-T_HERO, T_TILES, T_ACTIVITY, T_REPOS, T_GRAPH = 0.0, 0.6, 1.1, 1.9, 2.5
+T_HERO, T_TILES, T_ACTIVITY, T_REPOS, T_GRAPH = 0.0, 0.6, 1.1, 1.9, 3.0
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 LEVELS = ["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"]
@@ -313,39 +325,64 @@ def load() -> dict:
         months=months, current=current, longest=longest,
         active=sum(1 for d in days if d["count"]),
         busiest=max(days, key=lambda d: d["count"]),
-        repos={r["name"]: r for r in data["repositories"]["nodes"]},
     )
 
 
 # --------------------------------------------------------------------------
 # Cards
 # --------------------------------------------------------------------------
+BAYER = ((0, 8, 2, 10), (12, 4, 14, 6), (3, 11, 1, 9), (15, 7, 13, 5))
+
+
+def binary_portrait(c: Card, x: float, y: float, w: float, h: float, cols: int = 50, rows: int = 46) -> None:
+    """Draw the portrait as a grid of 1s and 0s: brighter areas get more 1s and brighter digits."""
+    try:
+        from PIL import Image, ImageFilter, ImageOps
+    except ImportError:
+        sys.exit("The portrait needs Pillow: pip install pillow (or delete data/portrait.png)")
+    img = Image.open(PORTRAIT).convert("RGBA")
+    alpha, grey = img.getchannel("A"), img.convert("L")
+    grey = Image.blend(grey, ImageOps.equalize(grey, mask=alpha.point(lambda v: 255 * (v > 128))), 0.6)
+    grey = grey.filter(ImageFilter.UnsharpMask(radius=10, percent=120, threshold=0))  # keep eyes and mouth
+    tone = list(grey.resize((cols, rows), Image.BOX).get_flattened_data())
+    cover = list(alpha.resize((cols, rows), Image.BOX).get_flattened_data())
+    cw, ch, steps = w / cols, h / rows, 7
+    for r in range(rows):
+        runs: dict[int, tuple[list[str], list[str]]] = {}
+        for col in range(cols):
+            v = tone[r * cols + col] / 255
+            if cover[r * cols + col] < 128:
+                continue  # outside the cut-out
+            xs, digits = runs.setdefault(round(v ** 1.3 * steps), ([], []))
+            xs.append(n(x + (col + 0.5) * cw))
+            digits.append("1" if v > (BAYER[r % 4][col % 4] + 0.5) / 16 else "0")
+        row = "".join(
+            f'<text class="dm500" x="{" ".join(xs)}" y="{n(y + (r + 0.82) * ch)}" font-size="{n(ch * 1.03)}" '
+            f'fill="{PAPER}" fill-opacity="{n(0.14 + 0.86 * level / steps)}" text-anchor="middle">'
+            f'{"".join(digits)}</text>' for level, (xs, digits) in sorted(runs.items()))
+        c.add(c.g(row, "fd", 0.3 + r * 0.03, 0.5))
+    c.used["dm500"].update("01")
+
+
 def hero() -> Card:
-    W, H = 840, 320
+    W, H = 840, 360
     c = Card("hero", W, H, INK, T_HERO, f"{NAME}. {LINE}")
 
-    # Right, dark half: the portrait, or the site's ghost word when there is none.
-    if not PORTRAIT.exists():
+    # Right, dark half: the portrait in binary, or the site's ghost word when there is none.
+    if PORTRAIT.exists():
+        binary_portrait(c, 558, H - 340, 264, 340)
+    else:
         c.add(c.g(c.text(W + 26, H + 24, "DATA", "syne800", 150, "#ffffff", ls=-0.05, anchor="end",
                          attrs=' fill-opacity=".04"'), "rt", 0.1))
-    else:
-        pw, ph = 204, 272
-        px, py = 675 - pw / 2, H - ph
-        b64 = base64.b64encode(PORTRAIT.read_bytes()).decode()
-        c.defs.append(f'<clipPath id="photo"><path d="M{n(px)} {H}V{n(py + 4)}a4 4 0 0 1 4-4h{pw - 8}'
-                      f'a4 4 0 0 1 4 4V{H}z"/></clipPath>')
-        c.add(c.g(f'<g clip-path="url(#photo)"><rect x="{n(px)}" y="{n(py)}" width="{pw}" height="{ph}" '
-                  f'fill="#222222"/><image href="data:image/jpeg;base64,{b64}" x="{n(px)}" y="{n(py)}" '
-                  f'width="{pw}" height="{ph}" preserveAspectRatio="xMidYMin slice"/></g>', "up", 0.3, 1.0))
 
     # Left, light half with the site's slanted edge.
-    c.add(c.g(f'<polygon points="0,0 548,0 470,{H} 0,{H}" fill="{GRAY}"/>', "lf", 0))
+    c.add(c.g(f'<polygon points="0,0 548,0 460,{H} 0,{H}" fill="{GRAY}"/>', "lf", 0))
     c.add(c.g(c.text(44, 62, LOGO, "syne800", 25, INK, ls=-0.04), "fd", 0.3))
-    c.add(c.g(c.text(44, 162, GREETING, "dm300", 19, MUTED), "up", 0.25))
+    c.add(c.g(c.text(44, 184, GREETING, "dm300", 19, MUTED), "up", 0.25))
     size = min(46, 400 / width(NAME, "syne800", 1, -0.03))
-    c.add(c.g(c.text(43, 210, NAME, "syne800", size, INK, ls=-0.03), "up", 0.35))
-    for i, line in enumerate(wrap(LINE, "dm400", 15, 395)):
-        c.add(c.g(c.text(44, 246 + i * 22, line, "dm400", 15, MUTED), "up", 0.5 + i * 0.08))
+    c.add(c.g(c.text(43, 232, NAME, "syne800", size, INK, ls=-0.03), "up", 0.35))
+    for i, line in enumerate(wrap(LINE, "dm400", 15, 385, 3)):
+        c.add(c.g(c.text(44, 268 + i * 22, line, "dm400", 15, MUTED), "up", 0.5 + i * 0.08))
     return c
 
 
@@ -411,32 +448,23 @@ def activity(d: dict) -> Card:
     return c
 
 
-def repo(i: int, f: dict, d: dict) -> Card:
+def repo(i: int, f: dict) -> Card:
     W, H = 840, 140
-    info = d["repos"].get(f["repo"]) or sys.exit(f"Featured repo {f['repo']!r} is not in data/github.json")
-    blurb = f.get("blurb") or info["description"] or ""
-    c = Card(f"repo-{f['slug']}", W, H, GRAY, T_REPOS + i * 0.15, f"{f['title']}. {blurb}")
+    c = Card(f"repo-{f['slug']}", W, H, GRAY, T_REPOS + i * 0.15, f"{f['title']}. {f['blurb']}")
     c.add(c.g(f'<rect width="6" height="{H}" fill="{INK}"/>', "gy", 0, 0.9))
-    trail = " / ".join(filter(None, [d["login"], f["repo"], f.get("path")])).upper()
-    c.add(c.g(c.text(44, 40, trail, "dm500", 10.5, MUTED, ls=0.16), "lf", 0.05))
+    c.add(c.g(c.text(44, 40, f["kicker"].upper(), "dm500", 10.5, MUTED, ls=0.16), "lf", 0.05))
     c.add(c.g(c.text(43, 76, f["title"], "syne800", 27, INK, ls=-0.03), "lf", 0.12))
     lines = "".join(c.text(44, 102 + j * 20, line, "dm400", 14, MUTED)
-                    for j, line in enumerate(wrap(blurb, "dm400", 14, 540)))
+                    for j, line in enumerate(wrap(f["blurb"], "dm400", 14, 600)))
     c.add(c.g(lines, "lf", 0.2))
     c.add(c.arrow(W - 44 - 15, 40, 0.3))
 
-    # The site's role pill, holding the language; stars only once there are some.
-    lang = (info["primaryLanguage"] or {}).get("name")
-    meta, right = "", W - 44
-    if lang:
-        pw = width(lang.upper(), "dm500", 10.5, 0.1) + 26
-        meta += (f'<rect x="{n(right - pw)}" y="97" width="{n(pw)}" height="24" rx="12" fill="{INK}"/>'
-                 + c.text(right - pw / 2 + 0.5, 113, lang.upper(), "dm500", 10.5, "#ffffff", ls=0.1, anchor="middle"))
-        right -= pw + 14
-    if info["stargazerCount"]:
-        stars = info["stargazerCount"]
-        meta += c.text(right, 113.5, f"{stars} star{'s' * (stars != 1)}", "dm500", 12, MUTED, anchor="end")
-    c.add(c.g(meta, "fd", 0.4))
+    # The site's role pill.
+    tag, right = f["tag"].upper(), W - 44
+    pw = width(tag, "dm500", 10.5, 0.1) + 26
+    c.add(c.g(f'<rect x="{n(right - pw)}" y="97" width="{n(pw)}" height="24" rx="12" fill="{INK}"/>'
+              + c.text(right - pw / 2 + 0.5, 113, tag, "dm500", 10.5, "#ffffff", ls=0.1, anchor="middle"),
+              "fd", 0.4))
     return c
 
 
@@ -492,7 +520,7 @@ def write_preview() -> None:
 def main() -> None:
     d = load()
     cards = [hero(), *(tile(i, t) for i, t in enumerate(TILES)), activity(d),
-             *(repo(i, f, d) for i, f in enumerate(FEATURED)), graph(d)]
+             *(repo(i, f) for i, f in enumerate(FEATURED)), graph(d)]
     OUT.mkdir(parents=True, exist_ok=True)
     keep = set()
     for card in cards:

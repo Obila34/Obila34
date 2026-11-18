@@ -10,15 +10,5 @@ query($login: String!) {
         }
       }
     }
-    repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC, orderBy: {field: NAME, direction: ASC}) {
-      nodes {
-        name
-        description
-        url
-        stargazerCount
-        forkCount
-        primaryLanguage { name }
-      }
-    }
   }
 }
